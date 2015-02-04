@@ -1,11 +1,12 @@
 // Next Artboard Plugin (shift command .)
 /*
   Author: Ken Moore
-  Date: 1 February 2015
+  Date: 31 January 2015
+  Version: 0.1
 
   Move the next artboard into view:
   - maintains vertical scroll offset between artboards
-  - zooms to the artboard's full width
+  - zooms to width of the new artboard
   - supports random access (select artboard in layers list and invoke Next Artboard)
 */
 
@@ -76,6 +77,10 @@ var newX = [nextArtboardRect x];
 var newWidth = [nextArtboardRect width];
 var newZoomValue = viewportWidth / newWidth;
 var newY = Math.max([nextArtboardRect y], [nextArtboardRect y] - ([currentArtboardRect y] + scrollOrigin.y / zoomValue));
+if (newY > [nextArtboardRect y] + [nextArtboardRect height]) {
+  // Ensure that the transition doesn't leave the user viewing an empty patch of artboard
+  newY = [nextArtboardRect y] + [nextArtboardRect height] - viewportHeight;
+}
 var newHeight = viewportHeight / newZoomValue;
 var newRect = MSRect.rectWithRect(NSMakeRect(newX, newY, newWidth, newHeight));
 
