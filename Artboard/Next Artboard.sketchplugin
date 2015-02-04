@@ -9,7 +9,6 @@
   - zooms to width of the new artboard
   - supports random access (select artboard in layers list and invoke Next Artboard)
 */
-
 var page = [doc currentPage];
 var artboards = [page artboards];
 var view = [doc currentView];
@@ -18,6 +17,18 @@ var zoomValue = [doc zoomValue];
 var viewportFrame = [view frame];
 var viewportWidth = viewportFrame.size.width;
 var viewportHeight = viewportFrame.size.height;
+
+// First warn the user to turn off "Animate Zoom" preference
+var defs = [[NSUserDefaultsController sharedUserDefaultsController] defaults];
+var animateZoom = defs.valueForKey("animateZoom"); 
+var defsStandard = [NSUserDefaults standardUserDefaults]
+var warningSeen = defsStandard.valueForKey("animateZoomWarningSeen")
+if (animateZoom && !warningSeen) {
+  var app = [NSApplication sharedApplication];
+  [app displayDialog:"For best results with the Next / Previous Artboard plugins, uncheck 'Animate Zoom' in Sketch > Preferences > General." withTitle:"Next Artboard"]
+
+  [defsStandard setObject: true forKey: "animateZoomWarningSeen"]
+}
 
 // Get the in-view artboard index (closest to the center of the viewport)
 function getInViewArtboardIndex() {
