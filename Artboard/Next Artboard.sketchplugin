@@ -1,8 +1,6 @@
 // Next Artboard Plugin (shift command .)
 /*
   Author: Ken Moore
-  Date: 31 January 2015
-  Version: 0.1
 
   Move the next artboard into view:
   - maintains vertical scroll offset between artboards
@@ -22,12 +20,12 @@ var viewportHeight = viewportFrame.size.height;
 var defs = [[NSUserDefaultsController sharedUserDefaultsController] defaults];
 var animateZoom = defs.valueForKey("animateZoom"); 
 var defsStandard = [NSUserDefaults standardUserDefaults]
-var warningSeen = defsStandard.valueForKey("animateZoomWarningSeen")
+var warningSeen = defsStandard.valueForKey("com.kenmooredesign.sketchplugin.NextArtboard.animateZoomWarningSeen")
 if (animateZoom && !warningSeen) {
   var app = [NSApplication sharedApplication];
   [app displayDialog:"For best results with the Next / Previous Artboard plugins, uncheck 'Animate Zoom' in Sketch > Preferences > General." withTitle:"Next Artboard"]
 
-  [defsStandard setObject: true forKey: "animateZoomWarningSeen"]
+  [defsStandard setObject: true forKey: "com.kenmooredesign.sketchplugin.NextArtboard.animateZoomWarningSeen"]
 }
 
 // Get the in-view artboard index (closest to the center of the viewport)

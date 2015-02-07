@@ -1,8 +1,6 @@
 // Previous Artboard Plugin (shift command ,)
 /*
   Author: Ken Moore
-  Date: 31 January 2015
-  Version: 0.1
 
   Move the previous artboard into view:
   - maintains vertical scroll offset between artboards
