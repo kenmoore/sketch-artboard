@@ -7,6 +7,7 @@
   - zooms to width of the new artboard
   - supports random access (select artboard in layers list and invoke Next Artboard)
 */
+
 var page = [doc currentPage];
 var artboards = [page artboards];
 var view = [doc currentView];
@@ -91,7 +92,7 @@ if (newY > [nextArtboardRect y] + [nextArtboardRect height]) {
   newY = [nextArtboardRect y] + [nextArtboardRect height] - viewportHeight;
 }
 var newHeight = viewportHeight / newZoomValue;
-var newRect = MSRect.rectWithRect(NSMakeRect(newX, newY, newWidth, newHeight));
+var newRect = NSMakeRect(newX, newY, newWidth, newHeight);
 
 // center new rect without animation
 view.zoomToFitRect(newRect);

@@ -82,7 +82,7 @@ if (newY > [prevArtboardRect y] + [prevArtboardRect height]) {
   newY = [prevArtboardRect y] + [prevArtboardRect height] - viewportHeight;
 }
 var newHeight = viewportHeight / newZoomValue;
-var newRect = MSRect.rectWithRect(NSMakeRect(newX, newY, newWidth, newHeight));
+var newRect = NSMakeRect(newX, newY, newWidth, newHeight);
 
 // center new rect without animation
 view.zoomToFitRect(newRect);
