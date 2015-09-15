@@ -1,10 +1,12 @@
-# Next Artboard / Previous Artboard plugins for Sketch
+# Next Artboard / Previous Artboard / Next Page / Previous Page plugins for Sketch
 
-These plugins put the next / previous artboard into view, with these benefits:
- - maintains vertical scroll offset between artboards
- - zooms to the artboard's full width
- - supports random access (select artboard in layers list and invoke Next / Previous Artboard)
+The artboard plugins put the next / previous artboard into view, and...
+ - maintain vertical scroll offset between artboards
+ - zoom to the artboard's full width
+ - support random access (select artboard in layers list and invoke Next / Previous Artboard)
 
+The page plugins put the next / previous page into view with these benefits, and...
+ - zoom to fit the first artboard's contents
 
 ## Installation
 1. [Download the Artboard plugins.](https://github.com/kenmoore/sketch-artboard/archive/master.zip)
