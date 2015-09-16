@@ -33,6 +33,7 @@ if (current_page_index < num_pages - 1) {
 
 current_page = pages[new_page_index]
 [doc setCurrentPage:current_page]
+doc.sidebarController().pagesViewController().reloadData()
 
 var all_artboards = [current_page artboards]
 var num_artboards = [all_artboards count]
