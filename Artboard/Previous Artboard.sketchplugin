@@ -8,6 +8,11 @@
   - supports random access (select artboard in layers list and invoke Previous Artboard)
 */
 
+// set doc and selection to work around the Sketch 3.4 - 3.4.2 bug 
+// where plugins often target a non-foreground document 
+var doc = NSDocumentController.sharedDocumentController().currentDocument() || NSDocumentController.sharedDocumentController().documents().firstObject()
+var selection = doc ? doc.findSelectedLayers() : nil
+
 var page = [doc currentPage];
 var artboards = [page artboards];
 var view = [doc currentView];
