@@ -1,0 +1,48 @@
+{
+    "name" : "Artboard",
+    "description" : "Move to next/previous artboard or page",
+    "author" : "Ken Moore",
+    "authorEmail" : "kenmoore@gmail.com",
+    "version" : "2.0",
+    "identifier" : "com.kenmoore.sketch.artboard",
+
+    "commands" : [
+    {
+      "script" : "Next Artboard.js",
+      "handler" : "nextArtboard",
+      "shortcut" : "shift command .",
+      "name" : "Next Artboard",
+      "identifier" : "nextartboard"
+    },
+    {
+      "script" : "Previous Artboard.js",
+      "handler" : "previousArtboard",
+      "shortcut" : "shift command ,",
+      "name" : "Previous Artboard",
+      "identifier" : "previousartboard"
+    },
+    {
+      "script" : "Next Page.js",
+      "handler" : "nextPage",
+      "shortcut" : "option command .",
+      "name" : "Next Page",
+      "identifier" : "nextpage"
+    },
+    {
+      "script" : "Previous Page.js",
+      "handler" : "previousPage",
+      "shortcut" : "option command ,",
+      "name" : "Previous Page",
+      "identifier" : "previouspage"
+    }
+  ],
+   "menu" : {
+   	"title" : "Artboard",
+   	"items" : [
+      "nextartboard",
+      "previousartboard",
+      "nextpage",
+   		"previouspage"
+   	]
+   }
+}
