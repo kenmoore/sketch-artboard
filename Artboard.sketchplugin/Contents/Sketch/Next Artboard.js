@@ -40,7 +40,7 @@ var nextArtboard = function(context) {
   var currentArtboard = [artboards objectAtIndex: currentArtboardIndex];
   var currentArtboardRect = [currentArtboard absoluteRect];
 
-  var nextArtboardIndex = (currentArtboardIndex + 1) % [artboards count];
+  var nextArtboardIndex = (currentArtboardIndex + [artboards count] - 1) % [artboards count];
   var nextArtboard;
 
   if (currentArtboard == [page currentArtboard] || [page currentArtboard] == null) {
@@ -54,7 +54,7 @@ var nextArtboard = function(context) {
 
   var nextArtboardRect = [nextArtboard absoluteRect];
 
-  [[doc currentPage] deselectAllLayers]
+  context.api().selectedDocument.selectedPage.selectedLayers.clear();
   [nextArtboard select:true byExpandingSelection:true]
 
   var newX = [nextArtboardRect x];
