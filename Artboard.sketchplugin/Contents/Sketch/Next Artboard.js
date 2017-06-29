@@ -54,7 +54,7 @@ var nextArtboard = function(context) {
 
   var nextArtboardRect = [nextArtboard absoluteRect];
 
-  [[doc currentPage] deselectAllLayers]
+  context.api().selectedDocument.selectedPage.selectedLayers.clear();
   [nextArtboard select:true byExpandingSelection:true]
 
   var newX = [nextArtboardRect x];
