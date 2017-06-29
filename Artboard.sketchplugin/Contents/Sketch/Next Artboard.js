@@ -40,7 +40,7 @@ var nextArtboard = function(context) {
   var currentArtboard = [artboards objectAtIndex: currentArtboardIndex];
   var currentArtboardRect = [currentArtboard absoluteRect];
 
-  var nextArtboardIndex = (currentArtboardIndex + 1) % [artboards count];
+  var nextArtboardIndex = (currentArtboardIndex + [artboards count] - 1) % [artboards count];
   var nextArtboard;
 
   if (currentArtboard == [page currentArtboard] || [page currentArtboard] == null) {
