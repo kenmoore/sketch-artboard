@@ -17,7 +17,7 @@ var previousArtboard = function(context) {
 
   var page = [doc currentPage];
   artboards = [page artboards];
-  view = [doc currentView];
+  view = [doc contentDrawView];
   scrollOrigin = [doc scrollOrigin];
   zoomValue = [doc zoomValue];
   var viewportFrame = [view frame];

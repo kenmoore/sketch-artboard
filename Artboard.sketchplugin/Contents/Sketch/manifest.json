@@ -3,7 +3,7 @@
     "description" : "Move to next/previous artboard or page",
     "author" : "Ken Moore",
     "authorEmail" : "kenmoore@gmail.com",
-    "version" : "2.2",
+    "version" : "2.3",
     "identifier" : "com.kenmoore.sketch.artboard",
 
     "commands" : [

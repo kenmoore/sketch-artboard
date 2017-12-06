@@ -40,6 +40,6 @@ var previousPage = function(context) {
     // center new rect without animation
     var current_artboard = all_artboards[0]
     var current_rect = [current_artboard rect]
-    [[doc currentView] zoomToFitRect:current_rect]
+    [[doc contentDrawView] zoomToFitRect:current_rect]
   }
 }
